@@ -4,7 +4,7 @@ package screens
 	import flash.text.TextFormat;
 	/**
 	 * ...
-	 * @author erwin henraat
+	 * @author Sjaak Nijland
 	 */
 	public class Screen extends MovieClip
 	{
@@ -38,7 +38,7 @@ package screens
 			scoreFormat = new TextFormat();
 			scoreFormat.font = "jedi";
 			scoreFormat.size = 40;
-			scoreFormat.color = 0xffffff;
+			scoreFormat.color = 0x000000;
 			
 		}
 		

@@ -9,7 +9,7 @@ package screens
 	import flash.events.TimerEvent;
 	/**
 	 * ...
-	 * @author erwin henraat
+	 * @author Sjaak Nijland
 	 */
 	public class GameOverScreen extends Screen 
 	{
@@ -28,7 +28,7 @@ package screens
 						
 			title = new TextField();
 			title.embedFonts = true;
-			title.text = "game over";
+			title.text = "Full Time";
 			title.autoSize = TextFieldAutoSize.CENTER;			
 			title.setTextFormat(textFormat);		
 			

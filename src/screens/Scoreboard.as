@@ -9,7 +9,7 @@ package screens
 	import screens.Screen;
 	/**
 	 * ...
-	 * @author erwin henraat
+	 * @author Sjaak Nijland
 	 */
 	public class Scoreboard extends Screen
 	{
@@ -56,7 +56,7 @@ package screens
 			
 			left.setTextFormat(scoreFormat);
 			left.border = false;
-			left.borderColor = 0xffffff;
+			left.borderColor = 0x000000;
 			
 			left.x = stage.stageWidth / 2 - 30 - left.width;
 			addChild(left);
@@ -68,13 +68,13 @@ package screens
 			
 			right.setTextFormat(scoreFormat);
 			right.border = false;
-			right.borderColor = 0xffffff;
+			right.borderColor =  0x000000;
 			
 			right.x = stage.stageWidth / 2 + 30;
 			addChild(right);
 			
 			var line:Shape = new Shape();
-			line.graphics.beginFill(0xffffff, 1);
+			line.graphics.beginFill( 0x000000, 1);
 			line.graphics.drawRect( -2, 0, 4, 60);
 			line.graphics.endFill();
 			line.x = stage.stageWidth / 2;

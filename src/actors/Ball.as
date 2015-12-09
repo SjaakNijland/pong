@@ -1,4 +1,4 @@
-package actors 
+﻿package actors 
 {
 	import flash.display.MovieClip;
 	import flash.events.Event;
@@ -9,10 +9,11 @@ package actors
 	import utils.MovementCalculator;
 	/**
 	 * ...
-	 * @author erwin henraat
+	 * @author Sjaak Nijland
 	 */
 	public class Ball extends MovieClip 
 	{
+		private var timer:Timer = new Timer(1000, 1);
 		private var _movement:Point;
 		public static const OUTSIDE_RIGHT:String = "outside right";
 		public static const OUTSIDE_LEFT:String = "outside left";
@@ -38,11 +39,18 @@ package actors
 		
 		private function init(e:Event):void 
 		{
+			timer.addEventListener(TimerEvent.TIMER_COMPLETE, stopPowerUp);
 			removeEventListener(Event.ADDED_TO_STAGE, init);
 			addChild(new BallArt());
 			movement = new Point(0, 0);
 			this.addEventListener(Event.ENTER_FRAME, loop);
 		}
+		private function stopPowerUp(e:TimerEvent):void
+		{
+			this.visible = true;
+			
+		}
+		
 		public function reset():void
 		{
 			this.x = stage.stageWidth / 2;
@@ -55,7 +63,7 @@ package actors
 		
 		private function restart(e:TimerEvent):void 
 		{
-			_movement = MovementCalculator.calculateMovement(15 + Math.random() * 10, Math.random() * 360);
+			_movement = MovementCalculator.calculateMovement( 10, Math.random() * 360);
 			if (_movement.x > 0 && _movement.x < 2) _movement.x += 2;
 			if (_movement.x < 0 && _movement.x > -2) _movement.x -= 2;
 		}
@@ -67,6 +75,7 @@ package actors
 			if (this.y <= 0 || this.y >= stage.stageHeight)
 			{
 				_movement.y *= -1;
+			
 				
 			}
 			if (this.x > stage.stageWidth)
@@ -82,6 +91,10 @@ package actors
 		{
 			this.removeEventListener(Event.ENTER_FRAME, loop);
 			
+		}
+		public function startPowerUp():void{
+			timer.start();
+			this.visible = false;
 		}
 		
 	}

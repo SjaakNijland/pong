@@ -3,7 +3,7 @@ package utils
 	import flash.geom.Point;
 	/**
 	 * ...
-	 * @author erwin henraat
+	 * @author Sjaak Nijland
 	 */
 	public class MovementCalculator 
 	{
